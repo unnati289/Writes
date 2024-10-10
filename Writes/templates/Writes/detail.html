@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.title }}</title>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p><strong>Description:</strong> {{ book.description }}</p>
+    
+    <h2>Write-Ups</h2>
+    <a href="{% url 'add-writeup' book.id %}">Add Write-Up</a>
+    <ul>
+        {% for writeup in book.writeups.all %}
+            <li>
+                <h3>{{ writeup.title }}</h3>
+                <p>{{ writeup.content|truncatewords:30 }}</p>
+                <a href="{% url 'writeup-detail' writeup.id %}">Read More</a>
+            </li>
+        {% empty %}
+            <li>No write-ups available for this book.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'book-list' %}">Back to Book List</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ writeup.book.title }} - Write-Up Detail</title>
+</head>
+<body>
+    <h1>{{ writeup.book.title }}</h1>
+    <h2>Write-Up</h2>
+    
+    <h3>{{ writeup.content }}</h3>
+    <p><strong>Date Posted:</strong> {{ writeup.date_posted|date:"Y-m-d H:i" }}</p>
+    
+    <a href="{% url 'book-detail' writeup.book.id %}">Back to Book Detail</a>
+    <a href="{% url 'book-list' %}">Back to Book List</a>
+</body>
+</html>

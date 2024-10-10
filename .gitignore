@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+*.log
+*.sqlite3
+/media
+/staticfiles
+/venv
+/env
+/*.env
+db.sqlite3
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
